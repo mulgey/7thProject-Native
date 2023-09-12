@@ -1,0 +1,2 @@
+1) npx create-expo-app 7thProject-Native // cd 5thProject-Native // git init // git add . // git commit -m "Initial commit"
+2) created screens
