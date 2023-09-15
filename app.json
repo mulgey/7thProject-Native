@@ -25,6 +25,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Uygulama fotoğraf çekebilmek için kameraya erişime ihtiyaç duymaktadır"
+        }
+      ]
+    ]
   }
 }
