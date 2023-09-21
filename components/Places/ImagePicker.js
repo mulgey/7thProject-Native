@@ -1,12 +1,20 @@
-import { View, StyleSheet, Button, Alert } from "react-native";
+import { View, StyleSheet, Alert, Image, Text } from "react-native";
+
 // PermissionStatus ve useCameraPermissions'ı iOS için ekledik
 import {
   launchCameraAsync,
   useCameraPermissions,
   PermissionStatus,
 } from "expo-image-picker";
+import { useState } from "react";
+
+// constants & UIs
+import { Colors } from "../../constants/colors";
+import OutlinedButton from "../UI/OutlinedButton";
 
 export default function ImagePicker() {
+  const [pickedImage, setPickedImage] = useState();
+
   // for iOS
   const [permissionInfo, requestPermission] = useCameraPermissions();
 
@@ -51,19 +59,42 @@ export default function ImagePicker() {
       // çok kaliteli, yer tutan olmasın
       quality: 0.5,
     });
-    console.log(image);
+
+    setPickedImage(image.assets[0]);
+  }
+
+  let imagePreview = <Text>Henüz çekilen bir fotoğraf yok.</Text>;
+
+  if (pickedImage) {
+    imagePreview = (
+      <Image style={styles.image} source={{ uri: pickedImage.uri }} />
+    );
   }
 
   return (
     <View>
-      <View></View>
-      <Button title="Fotoğraf çek" onPress={fotoCekFonksiyonu} />
+      <View style={styles.imagePreview}>{imagePreview}</View>
+      <OutlinedButton
+        children="Fotoğraf çek"
+        name="camera"
+        onPress={fotoCekFonksiyonu}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  imagePreview: {
+    width: 330,
+    height: 200,
+    marginVertical: 8,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.primary100,
+    borderRadius: 4,
+  },
+  image: {
+    width: 330,
+    height: 200,
   },
 });

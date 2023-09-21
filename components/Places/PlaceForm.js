@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, ScrollView, TextInput } from "react-native";
 // screens & constants
 import { Colors } from "../../constants/colors";
 import ImagePicker from "./ImagePicker";
+import LocationPicker from "./LocationPicker";
 
 export default function PlaceForm() {
   const [baslik, baslikAksiyonu] = useState();
@@ -24,6 +25,7 @@ export default function PlaceForm() {
         />
       </View>
       <ImagePicker />
+      <LocationPicker />
     </ScrollView>
   );
 }

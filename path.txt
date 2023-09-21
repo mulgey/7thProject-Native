@@ -2,4 +2,4 @@
 2) created screens and built the basic data flow structure with props along
 3) navigation'ı kurmaya başladık: "npm install @react-navigation/native", "npm install @react-navigation/native-stack"
 4) "expo install expo-image-picker" .. added plugins to the app.json file (cameraPermission)
-5) 
+5) " expo install expo-location " .. added plugins to the app.json file ()

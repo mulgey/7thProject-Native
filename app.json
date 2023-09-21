@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -31,6 +29,12 @@
         "expo-image-picker",
         {
           "cameraPermission": "Uygulama fotoğraf çekebilmek için kameraya erişime ihtiyaç duymaktadır"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Konumunuzu kullanmamıza izin verin lütfen"
         }
       ]
     ]
